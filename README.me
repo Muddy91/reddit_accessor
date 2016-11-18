@@ -1,0 +1,35 @@
+This is a simple Gem by Felipe Suero, designed to enable easy access to the reddit API.
+
+It takes a few requisite parameters and authorizes you. After that you pass in the type of request you want to make (get or post for the reddit API), any additional parameters, as well as the URL provided in the Reddit documentation. RedditAccessor then gives you the return info from the gem
+
+
+##Running this gem##
+
+This gem requires HTTParty. To use the gem simply create an instance of RedditAPI.new with the following parameters, in this order
+
+Key: the secret you got from https://www.reddit.com/prefs/apps
+
+Id: the id you got fromt he same page you got the key. It'l be shorter and listed under your application name
+
+Username: The username associated witht the development account
+
+Password: The password for that account
+
+Useragent: The name of your script or program. 
+
+If all you want is to generate an Oath token then you can just instantiate the class and access it with the .oath command. 
+
+To run API commands, just pass in the url from the reddit api list (https://www.reddit.com/dev/api/), along with a hash of parameters, to access_api_"your type of request goes here". For example to run:
+
+https://oauth.reddit.com/user/AnUserName/about 
+
+you would do something like
+
+r = RedditAPI.new
+
+r.access_api_get(https://oauth.reddit.com/user/AnUserName/about, {"sort" => "controversial",
+                                                                "limit" => "1"})
+##Known Bugs
+
+/api/username_available does not work, due to issues with the authorization header for a public method. 
+
