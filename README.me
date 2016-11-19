@@ -27,7 +27,7 @@ you would do something like
 
 r = RedditAPI.new
 
-r.access_api_get(https://oauth.reddit.com/user/AnUserName/about, {"sort" => "controversial",
+r.access_api_get('https://oauth.reddit.com/user/AnUserName/about', {"sort" => "controversial",
                                                                 "limit" => "1"})
                                                                 
 Hash keys MUST be in string form. 
