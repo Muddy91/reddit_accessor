@@ -27,8 +27,11 @@ you would do something like
 
 r = RedditAPI.new
 
-r.access_api_get(https://oauth.reddit.com/user/AnUserName/about, {"sort" => "controversial",
+r.access_api_get('https://oauth.reddit.com/user/AnUserName/about', {"sort" => "controversial",
                                                                 "limit" => "1"})
+                                                                
+Hash keys MUST be in string form. 
+
 ##Known Bugs
 
 /api/username_available does not work, due to issues with the authorization header for a public method. 
