@@ -37,31 +37,27 @@ module Reddit_Accessor
 
     def access_api_post(url, params)
       HTTParty.post(url, 
-                  (url, 
                   :headers => {"Authorization" => "bearer #{@token}",
                                     'user-agent' => @user_agent },
                   :query => params
                   )
-                  )
+                  
     end
 
     def access_api_delete(url, params)
       HTTParty.delete(url, 
-                  (url, 
                   :headers => {"Authorization" => "bearer #{@token}",
                                     'user-agent' => @user_agent },
                   :query => params
                   )
-                  )
+                  
     end
 
     def access_api_put(url, params)
       HTTParty.put(url, 
-                  (url, 
                   :headers => {"Authorization" => "bearer #{@token}",
                                     'user-agent' => @user_agent },
                   :query => params
-                  )
                   )
     end
   end
